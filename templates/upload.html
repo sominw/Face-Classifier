@@ -1,0 +1,39 @@
+<html lang="en">
+<head> 
+	<title>PreCogTask</title>
+	 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/new.css') }}">
+</head>
+<body>
+	<div class = "page-header">
+	<h1> PreCog Task: Kejriwal or Modi </h1>
+</div>
+<div class="container">
+  <form id='upload-form' action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+  	<label for="fname">Upload Image (.jpg/.jpeg)</label>
+  	<input type="file" name="file" accept="image/jpg, image/jpeg">
+    <input type="submit" value="Submit">
+	 </form>
+</div>
+<h2> <center> Results </center></h2>
+<table class="box" border="1px">
+  <tr>
+    <td>Detected Faces: </td>
+    <td>{res}</td>
+  </tr>
+  <tr>
+    <td>Arvind Kejriwal: </td>
+    <td>{res_AK}</td>
+  </tr>
+   <tr>
+    <td>Narendra Modi: </td>
+    <td>{res_NM}</td>
+  </tr>
+</table>
+
+<p>{{ output }}</p>
+</body>
+</html>
