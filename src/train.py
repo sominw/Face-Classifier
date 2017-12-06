@@ -7,8 +7,8 @@ from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 
 #Change directory to ../ak/train if reqd
-train_ = '../nm/train'
-cv_ = '../nm/validation'
+train_ = '../ak/train'
+cv_ = '../ak/validation'
 
 epochs = 100
 batch_size = 4
@@ -76,7 +76,7 @@ model.fit_generator(
     validation_data=validation_generator,
     validation_steps=cv_samples // batch_size)
 
-model.save('../models/nm_cnn.h5')
+model.save('../models/ak_cnn.h5')
 
 
 
