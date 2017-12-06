@@ -2,3 +2,4 @@ venv
 .DS_Store
 ak
 nm
+__pycache__
