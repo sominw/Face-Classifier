@@ -1,4 +1,5 @@
-import h5py
+import h5py #save model
+
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
@@ -18,7 +19,7 @@ train_samples = 600
 imgw, imgh = 150, 150
 cv_samples = 80
 
-#Convert to std-img-format
+#Conversion to I/P Format
 if K.image_data_format() == 'channels_first':
     input_shape = (3, imgw, imgh)
 else:
@@ -76,9 +77,5 @@ model.fit_generator(
     validation_data=validation_generator,
     validation_steps=cv_samples // batch_size)
 
+#Change path for nm
 model.save('../models/ak_cnn.h5')
-
-
-
-
-
