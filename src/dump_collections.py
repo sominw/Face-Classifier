@@ -4,7 +4,7 @@ import gridfs
 
 def dumpToDB(directory, lbl, prt):
 	conn = pymongo.MongoClient()
-	db = conn.NM_ImgData #Change DB Name accordingly
+	db = conn.AK_ImgData #Change DB Name accordingly
 	fs = gridfs.GridFS(db)
 	for file in os.listdir(directory):
 		filename=os.fsdecode(file)
@@ -12,7 +12,8 @@ def dumpToDB(directory, lbl, prt):
 			b = fs.put(img, filename=filename, label=lbl, part=prt)
 			print (filename, b)
 
-directory = '/Users/sominwadhwa/Desktop/temp/nm/train/positive'
+#Alter the three params accordingly or pass them off as args
+directory = '/Users/sominwadhwa/Desktop/temp/ak/train/positive'
 lbl = 'positive'
 part = 'train'
 
