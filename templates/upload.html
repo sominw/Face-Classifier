@@ -21,19 +21,19 @@
 <h2> <center> Results </center></h2>
 <table class="box" border="1px">
   <tr>
-    <td>Detected Faces: </td>
-    <td>{res}</td>
+    <td align="center">Detected Faces: </td>
+    <td align="center">{{faces}}</td>
+    <td align="center" rowspan="3"> <img src="{{source}}" width="150" height="150" onerror="this.src='/static/upload.png'"></td>
   </tr>
   <tr>
-    <td>Arvind Kejriwal: </td>
-    <td>{res_AK}</td>
+    <td align="center">Arvind Kejriwal: </td>
+    <td align="center">{{AK}}</td>
   </tr>
    <tr>
-    <td>Narendra Modi: </td>
-    <td>{res_NM}</td>
+    <td align="center">Narendra Modi: </td>
+    <td align="center">{{NM}}</td>
   </tr>
 </table>
-
 <p>{{ output }}</p>
 </body>
 </html>
