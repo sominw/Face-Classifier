@@ -1,8 +1,8 @@
 import h5py #save model
 
 from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
+from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
@@ -26,6 +26,7 @@ else:
     input_shape = (imgw, imgh, 3)
 
 model = Sequential()
+
 model.add(Conv2D(32, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -50,31 +51,14 @@ model.compile(loss='binary_crossentropy',
               metrics=['accuracy'])
 
 #Image Generator used to make the model more robust
-train_datagen = ImageDataGenerator(
-    rescale=1. / 255,
-    shear_range=0.2,
-    horizontal_flip=True,
-    zoom_range=0.2)
+train_datagen = ImageDataGenerator(rescale=1. / 255, shear_range=0.2, horizontal_flip=True, zoom_range=0.2)
 
-# only rescaling
+# rescale only
 test_datagen = ImageDataGenerator(rescale=1. / 255)
-train_generator = train_datagen.flow_from_directory(
-    train_,
-    target_size=(imgw, imgh),
-    batch_size=batch_size,
-    class_mode='binary')
+train_generator = train_datagen.flow_from_directory(train_, target_size=(imgw, imgh), batch_size=batch_size, class_mode='binary')
+validation_generator = test_datagen.flow_from_directory(cv_, target_size=(imgw, imgh), batch_size=batch_size, class_mode='binary')
 
-validation_generator = test_datagen.flow_from_directory(
-    cv_,
-    target_size=(imgw, imgh),
-    batch_size=batch_size,
-    class_mode='binary')
-
-model.fit_generator(
-    train_generator,
-    steps_per_epoch=train_samples // batch_size,
-    epochs=epochs,
-    validation_data=validation_generator,
+model.fit_generator(train_generator, steps_per_epoch=train_samples // batch_size, epochs=epochs, validation_data=validation_generator, 
     validation_steps=cv_samples // batch_size)
 
 #Change path for nm
