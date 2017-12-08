@@ -11,13 +11,13 @@ from keras.preprocessing.image import ImageDataGenerator
 train_ = '../ak/train'
 cv_ = '../ak/validation'
 
-epochs = 100
-batch_size = 4
+epochs = 60
+batch_size = 64
 
 #To evaluate steps per epoch
 train_samples = 600
 imgw, imgh = 150, 150
-cv_samples = 80
+cv_samples = 200
 
 #Conversion to I/P Format
 if K.image_data_format() == 'channels_first':
@@ -27,7 +27,7 @@ else:
 
 model = Sequential()
 
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(64, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
@@ -35,12 +35,16 @@ model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
-model.add(Conv2D(64, (3, 3)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
+#model.add(Conv2D(64, (3, 3)))
+#model.add(Activation('relu'))
+#model.add(MaxPooling2D(pool_size=(2, 2)))
+
 model.add(Flatten())
-model.add(Dense(64))
+model.add(Dense(32))
 model.add(Activation('relu'))
 model.add(Dropout(0.2))
 model.add(Dense(1))
