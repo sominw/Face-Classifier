@@ -9,6 +9,7 @@ import numpy as np
 from utils import detect_faces, compile_models, check_ak_or_namo
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 

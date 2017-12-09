@@ -1,3 +1,7 @@
+#boxWrapper {
+    position: relative:
+}
+
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
@@ -59,16 +63,17 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
 .box {
     width:300px;
     height:300px;
-    background-color:#d9d9d9;
-    position:fixed;
+    position:relative;
     margin-left:-150px; /* half of width */
-    margin-top:-150px;  /* half of height */
+    margin-top:-10px;  /* half of height */
     top:50%;
     left:50%;
+}
+.table{
+    background-color:#d9d9d9;
 }
 /* Add a background color and some padding around the form */
 .container {
