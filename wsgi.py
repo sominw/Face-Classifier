@@ -1,4 +1,4 @@
-from web_app import app
+from precog_task import app
 
 if __name__ == "__main__":
     app.run()
