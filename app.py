@@ -51,3 +51,5 @@ def upload():
 	print (source)
 	return render_template("upload.html",faces=faces, AK=AK, NM=NM, source=source)
 
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
