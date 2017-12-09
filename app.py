@@ -48,6 +48,5 @@ def upload():
 	cv2.imwrite(destination, faces_detected_img)
 	source = '/static/'+file.filename
 	print (source)
-	time.sleep(2)
 	return render_template("upload.html",faces=faces, AK=AK, NM=NM, source=source)
 

@@ -1,13 +1,13 @@
 import h5py #save model
 
 from keras.models import Sequential
-from keras.layers import Activation, Dropout, Flatten, Dense
+from keras.layers import Dense, Dropout, Flatten, Activation
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 
-#Change directory to ../ak/train if reqd
+#Change directory to ../<reqd>/train if reqd
 train_ = '../ak/train'
 cv_ = '../ak/validation'
 
@@ -17,7 +17,7 @@ batch_size = 64
 #To evaluate steps per epoch
 train_samples = 600
 imgw, imgh = 150, 150
-cv_samples = 200
+cv_samples = 100
 
 #Conversion to I/P Format
 if K.image_data_format() == 'channels_first':
