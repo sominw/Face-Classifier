@@ -21,7 +21,7 @@ def index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	target = os.path.join(APP_ROOT, 'static/')
+	target = os.path.join(APP_ROOT, 'static/images/')
 	print (target)
 
 	if not os.path.isdir(target):
@@ -30,23 +30,23 @@ def upload():
 	file = request.files['file']
 	print (file)
 	filename = file.filename
-	destination = 'static/'+str(secure_filename(file.filename))
+	destination = 'static/images/'+str(secure_filename(file.filename))
 	file.save(destination)
 	time.sleep(2)
 	print ("Location:" + destination)
 	img = cv2.imread(destination)
 	n_faces, faces_detected_img = detect_faces(haar_face_cascade, img)
-	faces="NO"
-	AK="NO"
-	NM="NO"
+	faces="No"
+	AK="No"
+	NM="No"
 	if n_faces > 0:
-		faces = "YES"
+		faces = "Yes"
 		if (check_ak_or_namo(destination, model_ak) == True):
-			AK = "YES"
+			AK = "Yes"
 		if (check_ak_or_namo(destination, model_nm) == True):
-			NM = "YES"
+			NM = "Yes"
 	cv2.imwrite(destination, faces_detected_img)
-	source = '/static/'+file.filename
+	source = '/static/images/'+file.filename
 	print (source)
 	return render_template("upload.html",faces=faces, AK=AK, NM=NM, source=source)
 
