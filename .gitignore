@@ -3,3 +3,4 @@ venv
 ak
 nm
 __pycache__
+*.pyc
