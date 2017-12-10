@@ -67,3 +67,10 @@ model.fit_generator(train_generator, steps_per_epoch=train_samples // batch_size
 
 #Change path for nm
 model.save('../models/ak_cnn.h5')
+
+""" filepath = "weight-improv-{epoch:02d}.hdf5"
+checkpoint = ModelCheckpoint(filepath, monitor='accuracy', verbose=1, save_best_only=True, mode = 'max')
+callbacks_list=[checkpoint] """
+
+#tensorboard = TensorBoard(log_dir='/output/Graph', histogram_freq=0, write_graph=True, write_images=True)
+
