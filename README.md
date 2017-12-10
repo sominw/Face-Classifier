@@ -50,7 +50,7 @@ To extract all images for `Arvind Kejriwal`, with `positive` class label & as pa
 
     python3 extract_img_example.py -person "Arvind Kejriwal" -label "positive" -part "validation"
 
-#### Potential Limitations
+### Potential Limitations
 
 The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face** -
 
