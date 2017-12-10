@@ -15,6 +15,7 @@
 2. Key Challenge - Sampling of images (positive and negative sets) to train CNNs. Segregation & and keeping negative samples of each kind in the cross-positive categories to build an effective classification system. In addition, keeping the **training** & **validation** datasets mutually exclusive.
 3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
 4. **Data Collection:** Used `Fatkun Batch Image` chrome extension to extract data from Google Images.
+5. Training carried out on [FloydHub's](https://www.floydhub.com/) CPU instances.
 
 **Directory Structure:**
 
@@ -48,3 +49,25 @@ Since the entire data is stored in GridFS specs, to extract it you can use the `
 To extract all images for `Arvind Kejriwal`, with `positive` class label & as part of `validation` dataset -
 
     python3 extract_img_example.py -person "Arvind Kejriwal" -label "positive" -part "validation"
+
+#### Potential Limitations
+
+The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face** -
+
+<p align="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
+</p>
+
+#### Some more examples
+
+<p align="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/3.png?raw=true"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/4.png?raw=true"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/5.png?raw=true"/>
+</p>
