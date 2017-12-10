@@ -15,6 +15,7 @@ olefile==0.44
 opencv-python==3.3.0.10
 Pillow==4.3.0
 protobuf==3.5.0.post1
+pymongo==3.6.0
 PyYAML==3.12
 scipy==1.0.0
 six==1.11.0
