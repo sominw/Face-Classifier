@@ -4,12 +4,17 @@
 
 **Task:** Build a simple Web Application, which when given an image, is able to detect a face (show with a boundary box) and give a result saying whether Narendra Modi and/or Arvind Kejriwal are present in the image or not.
 
+<p align="center">
+  <img src="https://blog.floydhub.com/static/5dbb96f16b91ac0639a42e2dfbd0d901-47668.jpg"/>
+</p>
+
 #### Overview of the solution
 
 **Brief description:**
 1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and 2 *Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
 2. Key Challenge - Sampling of images (positive and negative sets) to train CNNs. Segregation & and keeping negative samples of each kind in the cross-positive categories to build an effective classification system. In addition, keeping the **training** & **validation** datasets mutually exclusive.
 3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
+4. **Data Collection:** Used `Fatkun Batch Image` chrome extension to extract data from Google Images.
 
 **Directory Structure:**
 
