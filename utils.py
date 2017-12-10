@@ -21,8 +21,8 @@ def detect_faces(f_cascade, colored_img, scaleFactor = 1.1):
     return len(faces), img_copy
 
 def compile_models():
-	model_nm = load_model("models/nm_cnn.h5")
-	model_ak = load_model("models/ak_cnn.h5")
+	model_nm = load_model(os.path.join(APP_ROOT,"models/nm_cnn.h5"))
+	model_ak = load_model(os.path.join(APP_ROOT,"models/ak_cnn.h5"))
 	model_nm.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 	model_ak.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
