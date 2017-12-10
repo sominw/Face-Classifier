@@ -4,6 +4,7 @@ import os
 import cv2
 from keras.models import load_model
 import h5py
+import tensorflow as tf
 import numpy as np
 from keras.preprocessing import image
 
@@ -21,12 +22,12 @@ def detect_faces(f_cascade, colored_img, scaleFactor = 1.1):
     return len(faces), img_copy
 
 def compile_models():
-	model_nm = load_model("models/nm_cnn.h5")
-	model_ak = load_model("models/ak_cnn.h5")
+	model_nm = load_model(os.path.join(APP_ROOT,"models/nm_cnn.h5"))
+	model_ak = load_model(os.path.join(APP_ROOT,"models/ak_cnn.h5"))
 	model_nm.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 	model_ak.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
-
-	return model_ak, model_nm
+	graph = tf.get_default_graph()
+	return model_ak, model_nm, graph
 
 def check_ak_or_namo(path, model):
 	img = image.load_img(path, target_size=(150,150))
