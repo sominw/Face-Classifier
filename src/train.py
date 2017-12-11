@@ -35,6 +35,14 @@ model = Sequential()
 model.add(Conv2D(64, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
+"""
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+"""
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
@@ -51,12 +59,14 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
 model.add(Dense(32))
 model.add(Activation('relu'))
-model.add(Dropout(0.2))
+model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
+adam = Adam(lr=0.001)
+
 model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
+              optimizer=adam,
               metrics=['accuracy'])
 
 #Image Generator used to make the model more robust
@@ -78,6 +88,6 @@ callbacks_list=[checkpoint] """
 
 #Change path for nm/ak
 model.save('../models/nm_cnn.h5')
-#pk.dump(history, open("model_history_nm.sav","wb"))
+#pk.dump(history.history, open("model_history_nm.sav","wb"))
 
 
