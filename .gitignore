@@ -5,3 +5,4 @@ ak
 nm
 __pycache__
 *.pyc
+*.ipynb
