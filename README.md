@@ -33,6 +33,7 @@
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/namo_loss.png?raw=true"/>
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/ak_loss.png?raw=true"/>
 </p>
+>Given higher compute, the same/different architectures can be experimented with higher number of epochs
 
 - **Deployment:** DigitalOcean droplet.
 
