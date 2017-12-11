@@ -8,7 +8,7 @@
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/1.png?raw=true"/>
 </p>
 
-#### Overview of the solution
+### Overview of the solution
 
 **Brief description:**
 1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and *2 Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
@@ -61,7 +61,7 @@ The entirety of this minimal-webapp has a few limitations. Due to the nature of 
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
 </p>
 
-#### Some more examples
+### Some more examples
 
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/3.png?raw=true"/>
