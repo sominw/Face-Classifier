@@ -11,14 +11,14 @@
 #### Overview of the solution
 
 **Brief description:**
-1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and 2 *Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
+1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and *2 Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
 2. Key Challenge - Sampling of images (positive and negative sets) to train CNNs. Segregation & and keeping negative samples of each kind in the cross-positive categories to build an effective classification system. In addition, keeping the **training** & **validation** datasets mutually exclusive.
 3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
 
 **Particulars:**
 - **Data Collection:** Used `Fatkun Batch Image` chrome extension to extract data from Google Images.
 - Training carried out on [FloydHub's](https://www.floydhub.com/) CPU instances.
-- Deployment: DigitalOcean droplet.
+- **Deployment:** DigitalOcean droplet.
 
 **Directory Structure:**
 
@@ -46,8 +46,8 @@ The data is stored in GridFS specs in MongoDB. `dump_collections.py` was used to
 
 Since the entire data is stored in GridFS specs, to extract it you can use the `extract_img_example.py` by first adding the collections to a temporary database -
 
-    sudo mongorestore --db data_for_task --collection fs.chunks --out /data_for_task/fs.chunks.bson
-    sudo mongorestore --db data_for_task --collection fs.chunks --out /data_for_task/fs.files.bson
+    sudo mongorestore --db data_for_task --collection fs.chunks /data_for_task/fs.chunks.bson
+    sudo mongorestore --db data_for_task --collection fs.chunks /data_for_task/fs.files.bson
 
 To extract all images for `Arvind Kejriwal`, with `positive` class label & as part of `validation` dataset -
 
