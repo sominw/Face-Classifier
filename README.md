@@ -18,6 +18,7 @@
 </p>
 3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
 
+
 **Particulars:**
 - **Data Collection:** Used `Fatkun Batch Image` chrome extension to extract data from Google Images.
 - **Train-Validation split**: Nearly `80:20` split. 80% data used to train, the rest is used to cross-validate.
