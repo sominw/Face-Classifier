@@ -62,6 +62,10 @@ The entirety of this minimal-webapp has a few limitations. Due to the nature of 
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
 </p>
 
+Cases where this may happen:
+- Face covered with some form of obstacle.
+- Unusually large face proportions as compared to the size of the photo.
+- Varying viewing angles. 
 ---
 ### Some more examples
 
