@@ -56,7 +56,7 @@ To extract all images for `Arvind Kejriwal`, with `positive` class label & as pa
 
 ### Potential Limitations
 
-The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face** -
+The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face**. Altering `scale_factor` might as well alter the results. -
 
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
