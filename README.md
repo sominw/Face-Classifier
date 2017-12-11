@@ -61,6 +61,7 @@ The entirety of this minimal-webapp has a few limitations. Due to the nature of 
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
 </p>
 
+---
 ### Some more examples
 
 <p align="center">
