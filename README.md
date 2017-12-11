@@ -76,6 +76,9 @@ Cases where this may happen:
 ---
 Some more samples
 ---
+
+>The following samples are taken at the time of development, actual testing results may vary as the final model (weights) get updated periodically.
+
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/3.png?raw=true"/>
 </p>
