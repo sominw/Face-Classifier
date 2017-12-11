@@ -70,8 +70,8 @@ Cases where this may happen:
 *How to overcome this? RCNNs is an approach that can be tried out to resolve this sort of an issue.*
 
 ---
-### Some more examples
-
+Some more examples
+---
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/3.png?raw=true"/>
 </p>
