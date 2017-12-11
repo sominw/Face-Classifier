@@ -7,12 +7,17 @@ from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-epochs', type=int, default=25)
+parser.add_argument('-batch_size', type=int, default=64)
+args = parser.parse_args()
+
 #Change directory to ../<reqd>/train if reqd
 train_ = '../nm/train'
 cv_ = '../nm/validation'
 
-epochs = 60
-batch_size = 64
+epochs = args.epochs
+batch_size = args.batch_size
 
 #To evaluate steps per epoch
 train_samples = 800
@@ -73,6 +78,6 @@ callbacks_list=[checkpoint] """
 
 #Change path for nm/ak
 model.save('../models/nm_cnn.h5')
-pk.dump(history, open("model_history_nm.sav","wb"))
+#pk.dump(history, open("model_history_nm.sav","wb"))
 
 
