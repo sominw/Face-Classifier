@@ -26,12 +26,12 @@
 
 <p float="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/namo.png?raw=true"/>
-  <img src="https://github.com/sominwadhwa/sominwadhwa.github.io/blob/master/assets/intro_to_pytorch_series/acc_cnn.png?raw=true"/>
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/ak.png?raw=true"/>
 </p>
 
 <p float="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/namo_loss.png?raw=true"/>
-  <img src="https://github.com/sominwadhwa/sominwadhwa.github.io/blob/master/assets/intro_to_pytorch_series/acc_cnn.png?raw=true"/>
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/ak_loss.png?raw=true"/>
 </p>
 
 - **Deployment:** DigitalOcean droplet.
