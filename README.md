@@ -23,6 +23,17 @@
 - **Data Collection:** Used `Fatkun Batch Image` chrome extension to extract data from Google Images.
 - **Train-Validation split**: Nearly `80:20` split. 80% data used to train, the rest is used to cross-validate.
 - Training carried out on [FloydHub's](https://www.floydhub.com/) CPU instances.
+
+<p float="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/namo.png?raw=true"/>
+  <img src="https://github.com/sominwadhwa/sominwadhwa.github.io/blob/master/assets/intro_to_pytorch_series/acc_cnn.png?raw=true"/>
+</p>
+
+<p float="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/namo_loss.png?raw=true"/>
+  <img src="https://github.com/sominwadhwa/sominwadhwa.github.io/blob/master/assets/intro_to_pytorch_series/acc_cnn.png?raw=true"/>
+</p>
+
 - **Deployment:** DigitalOcean droplet.
 
 **Directory Structure:**
