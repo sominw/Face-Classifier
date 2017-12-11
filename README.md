@@ -13,6 +13,9 @@
 **Brief description:**
 1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and *2 Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
 2. Key Challenge - Sampling of images (positive and negative sets) to train CNNs. Segregation & and keeping negative samples of each kind in the cross-positive categories to build an effective classification system. In addition, keeping the **training** & **validation** datasets mutually exclusive. Also used `flow_generator` to overcome the limitation of limited data to create multiple variants of the same image.
+<p align="center">
+  <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/6.png?raw=true"/>
+</p>
 3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
 
 **Particulars:**

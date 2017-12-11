@@ -1,5 +1,5 @@
 import h5py #save model
-
+import pickle as pk
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Activation
 from keras.layers import Conv2D, MaxPooling2D
@@ -8,16 +8,16 @@ from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 
 #Change directory to ../<reqd>/train if reqd
-train_ = '../ak/train'
-cv_ = '../ak/validation'
+train_ = '../nm/train'
+cv_ = '../nm/validation'
 
 epochs = 60
 batch_size = 64
 
 #To evaluate steps per epoch
-train_samples = 600
+train_samples = 800
 imgw, imgh = 150, 150
-cv_samples = 100
+cv_samples = 300
 
 #Conversion to I/P Format
 if K.image_data_format() == 'channels_first':
@@ -62,15 +62,17 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 train_generator = train_datagen.flow_from_directory(train_, target_size=(imgw, imgh), batch_size=batch_size, class_mode='binary')
 validation_generator = test_datagen.flow_from_directory(cv_, target_size=(imgw, imgh), batch_size=batch_size, class_mode='binary')
 
-model.fit_generator(train_generator, steps_per_epoch=train_samples // batch_size, epochs=epochs, validation_data=validation_generator, 
+history = model.fit_generator(train_generator, steps_per_epoch=train_samples // batch_size, epochs=epochs, validation_data=validation_generator, 
     validation_steps=cv_samples // batch_size)
-
-#Change path for nm
-model.save('../models/ak_cnn.h5')
 
 """ filepath = "weight-improv-{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='accuracy', verbose=1, save_best_only=True, mode = 'max')
 callbacks_list=[checkpoint] """
 
 #tensorboard = TensorBoard(log_dir='/output/Graph', histogram_freq=0, write_graph=True, write_images=True)
+
+#Change path for nm/ak
+model.save('../models/nm_cnn.h5')
+pk.dump(history, open("model_history_nm.sav","wb"))
+
 
