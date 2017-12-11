@@ -68,6 +68,7 @@ Cases where this may happen:
 - Varying viewing angles.
 
 *How to overcome this? RCNNs is an approach that can be tried out to resolve this sort of an issue.*
+
 ---
 ### Some more examples
 
