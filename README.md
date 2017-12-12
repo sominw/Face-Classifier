@@ -11,12 +11,12 @@
 ### Overview of the solution
 
 **Brief description:**
-1. Used 3 different classifier to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and *2 Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
+1. Used 3 different classifiers to process the image - A *Haar Cascade* clf to detect and draw boundry around the face and *2 Convolutional Neural Networks* to further evaluate if it is Arvind Kejriwal and/or Narendra Modi.
 2. Key Challenge - Sampling of images (positive and negative sets) to train CNNs. Segregation & and keeping negative samples of each kind in the cross-positive categories to build an effective classification system. In addition, keeping the **training** & **validation** datasets mutually exclusive. Also used `flow_generator` to overcome the limitation of limited data to create multiple variants of the same image.
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/6.png?raw=true"/>
 </p>
-3. Use flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
+3. Used flask to create a minimal web-app where you can upload the image. Deployed it on a DigitalOcean droplet.
 
 
 **Particulars:**
@@ -73,7 +73,7 @@ To extract all images for `Arvind Kejriwal`, with `positive` class label & as pa
 
 ### Potential Limitations
 
-The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face**. Altering `scale_factor` might as well alter the results. -
+The entirety of this minimal-webapp has a few limitations. Due to the nature of the training data (preserve covariance, reduce randomness in samples), the detection of whether the image is of AK or NaMo will only happen **if haar-cascade clf is able to detect a face**, if however even a single face is detected, CNNs might be able to correctly classify the image. Altering `scale_factor` param of haar_cascade might as well alter the results in cases where facial propotionals are unusally large as compared to the size of the image. -
 
 <p align="center">
   <img src="https://github.com/sominwadhwa/precog_task/blob/master/static/etc/2.png?raw=true"/>
