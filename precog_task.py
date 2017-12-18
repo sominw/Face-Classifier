@@ -41,12 +41,12 @@ def upload():
 	AK="No"
 	NM="No"
 	if n_faces > 0:
-		faces = "Yes"
-	    with graph.as_default():
-	        if (check_ak_or_namo(destination, model_ak) == True):
-	            AK = "Yes"
-	        if (check_ak_or_namo(destination, model_nm) == True):
-                NM = "Yes"
+            faces = "Yes"
+            with graph.as_default():
+                if (check_ak_or_namo(destination, model_ak) == True):
+                    AK = "Yes"
+                if (check_ak_or_namo(destination, model_nm) == True):
+                    NM = "Yes"
 	cv2.imwrite(destination, faces_detected_img)
 	source = '/static/images/'+file.filename
 	print (source)
