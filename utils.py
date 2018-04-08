@@ -11,7 +11,7 @@ from keras.preprocessing import image
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-def detect_faces(f_cascade, colored_img, scaleFactor = 1.1):
+def detect_faces(f_cascade, colored_img, scaleFactor = 1.095):
     img_copy = colored_img.copy()
     gray = cv2.cvtColor(img_copy, cv2.COLOR_BGR2GRAY)
     #haar_face_cascade = cv2.CascadeClassifier(os.path.join(APP_ROOT,'models/data/haarcascade_frontalface_alt.xml'))
