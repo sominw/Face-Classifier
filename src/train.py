@@ -15,8 +15,8 @@ parser.add_argument('-batch_size', type=int, default=64)
 args = parser.parse_args()
 
 #Change directory to ../<reqd>/train if reqd
-train_ = '../nm/train'
-cv_ = '../nm/validation'
+train_ = '../data/train'
+cv_ = '../data/validation'
 
 epochs = args.epochs
 batch_size = args.batch_size
@@ -89,7 +89,7 @@ callbacks_list=[checkpoint] """
 #tensorboard = TensorBoard(log_dir='/output/Graph', histogram_freq=0, write_graph=True, write_images=True)
 
 #Change path for nm/ak
-model.save('../models/nm_cnn.h5')
+model.save('../models/ml_cnn.h5')
 #pk.dump(history.history, open("model_history_nm.sav","wb"))
 
 
